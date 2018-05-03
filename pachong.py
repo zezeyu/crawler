@@ -24,7 +24,8 @@ for p_i in p_list:
     if rec:
         print(rec.group(1))  # 第几条
         print(rec.group(2))  # 对应的内容
-        connection = pymysql.connect(host='47.95.235.34', user='hz', password='yao', db='wikiurl', charset='utf8mb4', )
+        # 改成你自己的数据库
+        connection = pymysql.connect(host='xx.xx.xx.xx', user='hz', password='yao', db='crawler', charset='utf8mb4', )
         try:
             with connection.cursor() as cursor:
                 sql = "insert into `news`(`title`,`content`) values(%s,%s)"
